@@ -1,0 +1,83 @@
+<mat-card>
+    <mat-card-title class="card-title">Produkt i Ri</mat-card-title>
+    <br>
+    <mat-card-content>
+      <form [formGroup]="createProductForm" (ngSubmit)="createProduct()">
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="short-width">
+            <mat-label>Emri</mat-label>
+            <input matInput formControlName="title">
+            <mat-error *ngIf="createProductForm.get('title')?.hasError('required')">
+              *
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Pershkrimi</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Kategoria</mat-label>
+            <mat-select formControlName="categoryId" (selectionChange)="onCategoryChange($event.value)">
+              <mat-option *ngFor="let category of categories" [value]="category.id">
+                {{category.categoryName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>    
+            
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="short-width">
+            <mat-label>Cmimi per unit</mat-label>
+            <input matInput formControlName="unitPrice" type="number">
+            <mat-error *ngIf="createProductForm.get('unitPrice')?.hasError('required')">
+              *
+            </mat-error>
+            <mat-error *ngIf="createProductForm.get('unitPrice')?.hasError('min')">
+              Cmimi per unit duhet te jete me i madh se 0!
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" class="short-width">
+            <mat-label>Sasia</mat-label>
+            <input matInput formControlName="quantity" type="number">
+            <mat-error *ngIf="createProductForm.get('quantity')?.hasError('required')">
+              *
+            </mat-error>
+            <mat-error *ngIf="createProductForm.get('quantity')?.hasError('min')">
+              Sasia duhet te jete me e madhe se 0!
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="short-width">
+            <mat-label>Furnizuesi</mat-label>
+            <mat-select formControlName="supplierId" (selectionChange)="onSupplierChange($event.value)">
+              <mat-option *ngFor="let supplier of suppliers" [value]="supplier.id">
+                {{supplier.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field appearance="outline" class="short-width">
+            <mat-label>Magazina</mat-label>
+            <mat-select formControlName="warehouseId" (selectionChange)="onWarehouseChange($event.value)">
+              <mat-option *ngFor="let warehouse of warehouses" [value]="warehouse.id">
+                {{warehouse.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Shto</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

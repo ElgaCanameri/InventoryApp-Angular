@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title class="card-title">Klient i Ri</mat-card-title>
+    <br>
+    <mat-card-content>
+      <form [formGroup]="createCustomerForm" (ngSubmit)="createCustomer()">
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Emri</mat-label>
+            <input matInput formControlName="customerName">
+            <mat-error *ngIf="createCustomerForm.get('customerName')?.hasError('required')">
+              *
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Adresa</mat-label>
+            <input matInput formControlName="customerAddress">
+            <mat-error *ngIf="createCustomerForm.get('customerAddress')?.hasError('required')">
+              *
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+    
+  
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Shto</button>
+        </div>
+      </form>
+    </mat-card-content>
+</mat-card>

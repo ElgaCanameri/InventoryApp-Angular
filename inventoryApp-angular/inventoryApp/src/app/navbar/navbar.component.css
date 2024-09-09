@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-nav-list {
+  flex: 1;
+  height: 98vh;
+  background-color: #405D72;
+}
+
+mat-list-item {
+  
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;  /* Aligns the icon and text vertically */
+}
+
+mat-icon {
+  margin-right: 3px; /* Space between icon and text */
+  font-size: 22px; /* Adjust size to match the text */
+  vertical-align: middle; /* Align icon vertically in the middle */
+  display: inline-flex; /* Ensures proper alignment in a flex container */
+  color: #FFF8F3 ;
+}
+

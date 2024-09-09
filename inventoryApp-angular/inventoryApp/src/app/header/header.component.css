@@ -1,0 +1,13 @@
+:host{
+    display: block;
+    width: 100%;
+    height: 64px;
+  }
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+  background-color: #405D72;
+  color: #FFF8F3;
+}
+
+  

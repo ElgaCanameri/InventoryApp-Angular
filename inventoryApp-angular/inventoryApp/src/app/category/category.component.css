@@ -1,0 +1,16 @@
+.custom-link {
+    color: #FFF8F3; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 4px; /* Round corners */
+    background-color: #405D72; /* Background color */
+    display: inline-block; /* Ensure padding works correctly */
+    margin-bottom: 20px;
+  }
+  
+  .custom-link:hover {
+    background-color: #6482AD; /* Change background on hover */
+    color: #FFF8F3; /* Change text color on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+  }

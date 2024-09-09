@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title class="card-title">Kategoria e Re</mat-card-title>
+    <br>
+    <mat-card-content>
+      <form [formGroup]="createCategoryForm" (ngSubmit)="createCategory()">
+        
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Kategoria</mat-label>
+            <input matInput formControlName="categoryName">
+            <mat-error *ngIf="createCategoryForm.get('name')?.hasError('required')">
+              *
+            </mat-error>
+          </mat-form-field>
+        </div>  
+  
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Shto</button>
+        </div>
+      </form>
+    </mat-card-content>
+</mat-card>
